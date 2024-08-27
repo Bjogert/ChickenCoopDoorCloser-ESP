@@ -13,7 +13,7 @@ void moveMotorBackward();
 
 // Motor settings
 const int stepsPerRevolution = 200;  // Steps per revolution for your motor
-const int desiredSteps = 20000;      // Desired number of steps to move
+const int desiredSteps = 24000;      // Desired number of steps to move
 const int stepChunkSize = 100;       // Number of steps per chunk to avoid WDT triggering
 
 // Pin assignments
@@ -34,7 +34,7 @@ const unsigned long debounceInterval = 50;  // Debounce time for the button
 
 // Light and darkness detection settings
 int lightRequiredTime = 10000;  // Light must persist for 10 seconds (10000 milliseconds) before starting darkness detection
-int darknessThreshold = 10000;  // Darkness must persist for 10 seconds (10000 milliseconds) to trigger motor sequence
+int darknessThreshold = 60000;  // Darkness must persist for 10 seconds (one minute) to trigger motor sequence
 unsigned long lightStartTime = 0;
 unsigned long darknessStartTime = 0;
 bool isDark = false;
