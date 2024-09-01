@@ -119,7 +119,12 @@ void loop() {
             } else {
                 // If it has been dark for long enough, trigger the motor sequence
                 if (currentMillis - darknessStartTime >= darknessThreshold) {
-                    Serial.println("It's been dark for 10 seconds. Triggering motor sequence.");
+                    Serial.println("It's been dark for 10 seconds. Waiting for 30 minutes before triggering motor sequence.");
+
+                    // Delay for 30 minutes (1800000 milliseconds)
+                    delay(1800000);
+
+                    Serial.println("30 minutes delay completed. Triggering motor sequence.");
                     motorSequenceTriggered = true;
                 } else {
                     Serial.print("Darkness ongoing for ");
